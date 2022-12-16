@@ -24,7 +24,7 @@ if (votingAge > 18) {
   console.log('True');
 } else {
   console.log('False');
-};
+}
 
 
 /*
@@ -39,7 +39,14 @@ Do the following:
    HINT: no function required
 */
 
+let dog = 'Kaia'
+let behavior = 'bad'
 
+if (behavior === 'bad') {
+  dog = 'Milky';
+}
+
+console.log(dog);
 
 
 
