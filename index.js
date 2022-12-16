@@ -60,9 +60,8 @@ Do the following:
 
    HINT: look up the Number method
 */
-let word = '1999'
-let number = Number(word)
-console.log(number)
+const word = '1999'
+console.log(Number(word));
 
 
 
@@ -93,8 +92,7 @@ Do the following:
 */
 
 function dogYears(years) {
-  let dogAge = years * 7
-  return dogAge
+  return years * 7
 }
 
 console.log(dogYears(7));
@@ -147,29 +145,27 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */
 
-function hungryDog(age, weight) {
-  if (age >= 1) {
-    if (weight <= 5) {
-      return weight * .05
-    } else if (weight >= 6 && weight <= 10) {
-      return weight * .04
-    } else if (weight >= 11 && weight <= 15) {
-      return weight * .03
-    } else {
-      return weight * .02
-    }
+function hungryDog(weight, age) {
+  if (age >= 1 && weight <= 5) {
+    return weight * 0.05;
+  } else if (age >= 1 && weight >= 6 && weight <= 10) {
+    return weight * 0.04;
+  } else if (age >= 1 && weight >= 11 && weight <= 15) {
+    return weight * 0.03
+  } else if (age >= 1 && weight > 15) {
+    return weight * 0.02;
+  } else if (age < 1 && age >= .583) {
+    return weight * .04
+  } else if (age < .583 && age >= .333) {
+    return weight * .05
+  } else if (age < .333) {
+    return weight * .1
   } else {
-    if (age >= .17 && age <= .33) {
-      return weight * .1
-    } else if (age > .33 && age <= .58) {
-      return weight * .05
-    } else {
-      return weight * .04
-    }
+    return 'please try again'
   }
 }
 
-console.log(hungryDog(.75, 5));
+console.log(hungryDog(1, 15));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -191,12 +187,31 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
+let computer = Math.random()
 
-function game(user, computer) {
-  /*add your code here*/
+if (computer <= 0.34) {
+  computer = 'rock';
+} else if (computer <= 0.67) {
+  computer = 'paper';
+} else if (computer > 0.67) {
+  computer = 'scissors';
 }
 
+function game(user, computer) {
+  if (user === computer) {
+    return "it's a tie";
+  } else if (user === 'rock' && computer === 'scissors') {
+    return 'you win';
+  } else if (user === 'paper' && computer === 'rock') {
+    return 'you win';
+  } else if (user === 'scissors' && computer === 'paper') {
+    return 'you win';
+  } else {
+    return 'you lose';
+  }
+}
 
+console.log(game('rock', computer))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
