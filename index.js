@@ -60,7 +60,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+let word = '1999'
+let number = Number(word)
+console.log(number)
 
 
 
